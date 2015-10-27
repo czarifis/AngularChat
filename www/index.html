@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Bootstrap Chat Box Example</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME  CSS -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">-->
+    <!--<link href="css/style.css" rel="stylesheet">-->
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+  <div ng-controller="imcontroller" class="container">
+    <div class="row pad-top pad-bottom">
+
+
+      <div class=" col-lg-6 col-md-6 col-sm-6">
+        <div class="chat-box-div">
+          <div class="chat-box-head">
+            GROUP CHAT HISTORY
+            <div class="btn-group pull-right">
+              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="fa fa-cogs"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#"><span class="fa fa-map-marker"></span>&nbsp;Invisible</a></li>
+                <li><a href="#"><span class="fa fa-comments-o"></span>&nbsp;Online</a></li>
+                <li><a href="#"><span class="fa fa-lock"></span>&nbsp;Busy</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><span class="fa fa-circle-o-notch"></span>&nbsp;Logout</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="panel" class="panel-body chat-box-main">
+            <span ng-repeat="d in data">
+
+                <div class="chat-box-{{d.position}}">
+                  {{d.message}}
+                </div>
+                <div class="chat-box-name-{{d.position}}">
+                  <img src="{{d.avatar}}" alt="bootstrap Chat box user image" class="img-circle" />
+                  -  {{d.sender}}
+                </div>
+                <hr class="hr-clas" />
+            </span>
+            <!--<div class="chat-box-right">-->
+              <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+              <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+            <!--</div>-->
+            <!--<div class="chat-box-name-right">-->
+              <!--<img src="assets/img/costas.jpg" alt="bootstrap Chat box user image" class="img-circle" />-->
+              <!--- Costas Zarifis-->
+            <!--</div>-->
+            <!--<hr class="hr-clas" />-->
+            <!--<div class="chat-box-left">-->
+              <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+              <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+            <!--</div>-->
+            <!--<div class="chat-box-name-left">-->
+              <!--<img src="assets/img/yannis.jpg" alt="bootstrap Chat box user image" class="img-circle" />-->
+              <!---  Yannis Papakonstantinou-->
+            <!--</div>-->
+            <!--<hr class="hr-clas" />-->
+            <!--<div class="chat-box-right">-->
+              <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+              <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+            <!--</div>-->
+            <!--<div class="chat-box-name-right">-->
+              <!--<img src="assets/img/costas.jpg" alt="bootstrap Chat box user image" class="img-circle" />-->
+              <!--- Costas Zarifis-->
+            <!--</div>-->
+            <!--<hr class="hr-clas" />-->
+          </div>
+          <div class="chat-box-footer">
+            <div class="input-group" style="display: block">
+              <!--<input type="text" class="form-control" placeholder="Enter Text Here..." ng-model="newmessage">-->
+                            <!--<span class="input-group-btn">-->
+                                <!--<button class="btn btn-info" type="button">SEND</button>-->
+                            <!--</span>-->
+
+              <form ng-submit="sendMessage()" style="display: flex">
+                <input type="text" class="form-control" placeholder="Enter Text Here..."  ng-model="newmessage">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="submit">SEND</button>
+                            </span>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <!-- USING SCRIPTS BELOW TO REDUCE THE LOAD TIME -->
+  <!-- CORE JQUERY SCRIPTS FILE -->
+  <script src="assets/js/jquery-1.11.1.js"></script>
+  <!-- CORE BOOTSTRAP SCRIPTS  FILE -->
+  <script src="assets/js/bootstrap.js"></script>
+  </body>
+</html>
